@@ -3,12 +3,13 @@
 #include "blink.h"
 
 void op_sysclk(unsigned int div);
-
+uint32_t global_arr[6]={0xA,0xB,0xC,0xD,0xE,0xF};
 int main(void)
 {
 	op_sysclk(4);
-	blink(LED_BLUE);
+	blink(LED_GREEN);
 }
+
 
 /**
  * 

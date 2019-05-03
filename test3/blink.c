@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "reg.h"
 
+
 /**
  * 
  * LED init
@@ -35,20 +36,20 @@ void blink(unsigned int led)
 {
 	led_init(led);
 
-	unsigned int i;
+	
 
 	while (1)
 	{
 		//set GPIOD led pin
 		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BSy_BIT(led));
 
-		for (i = 0; i < 500000; i++)
+		//for (i = 0; i < 500000; i++)
 			;
 
 		//reset GPIOD led pin
-		SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BRy_BIT(led));
+		//SET_BIT(GPIO_BASE(GPIO_PORTD) + GPIOx_BSRR_OFFSET, BRy_BIT(led));
 
-		for (i = 0; i < 500000; i++)
+		//for (i = 0; i < 500000; i++)
 			;
 	}
 }
